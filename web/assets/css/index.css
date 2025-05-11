@@ -1,0 +1,560 @@
+/* Index Page CSS */
+:root {
+  --primary-color: #4a6fa5;
+  --primary-light: #6b8cce;
+  --primary-dark: #3d5d8a;
+  --secondary-color: #ff9a8b;
+  --secondary-light: #ffc3a0;
+  --accent-color: #ffc107;
+  --success-color: #28a745;
+  --danger-color: #dc3545;
+  --warning-color: #ffc107;
+  --info-color: #17a2b8;
+  --light-color: #f8f9fa;
+  --dark-color: #343a40;
+  --gray-color: #6c757d;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f5f7fa;
+  color: #333;
+  overflow-x: hidden;
+}
+
+/* Hero Section - Full Viewport Height */
+.hero-section {
+  background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+  color: white;
+  min-height: 100vh; /* Make hero section take full viewport height */
+  display: flex;
+  align-items: center;
+  border-radius: 0; /* Remove border radius for full-screen effect */
+  margin-bottom: 0; /* Remove margin */
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-section::before {
+  content: "";
+  position: absolute;
+  top: -50px;
+  right: -50px;
+  width: 200px;
+  height: 200px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+}
+
+.hero-section::after {
+  content: "";
+  position: absolute;
+  bottom: -80px;
+  left: -80px;
+  width: 300px;
+  height: 300px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-title {
+  font-size: 48px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.hero-subtitle {
+  font-size: 20px;
+  margin-bottom: 30px;
+  max-width: 600px;
+}
+
+.hero-btn {
+  display: inline-block;
+  background-color: white;
+  color: var(--primary-color);
+  padding: 15px 30px;
+  border-radius: 50px;
+  font-size: 18px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.hero-btn:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+  color: var(--primary-dark);
+}
+
+.hero-image {
+  border-radius: 15px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.hero-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.hero-image:hover img {
+  transform: scale(1.09);
+}
+
+/* Scroll indicator */
+.scroll-indicator {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  color: white;
+  z-index: 2;
+  animation: bounce 2s infinite;
+}
+
+.scroll-indicator i {
+  font-size: 24px;
+}
+
+.scroll-text {
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+@keyframes bounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}
+
+/* Features Section */
+.features-section {
+  padding: 80px 0;
+  position: relative;
+  background-color: white;
+}
+
+.section-title {
+  text-align: center;
+  color: var(--primary-color);
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 50px;
+  position: relative;
+  padding-bottom: 15px;
+}
+
+.section-title::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(to right, var(--primary-color), var(--primary-light));
+  border-radius: 2px;
+}
+
+.feature-card {
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  text-align: center;
+  transition: all 0.3s ease;
+  height: 100%;
+}
+
+.feature-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.feature-icon {
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, var(--primary-light), var(--primary-color));
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+  color: white;
+  font-size: 32px;
+}
+
+.feature-title {
+  color: var(--primary-color);
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.feature-text {
+  color: var(--gray-color);
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* Popular Rooms Section */
+.popular-rooms-section {
+  padding: 80px 0;
+  background-color: #f8f9fa;
+  margin-bottom: 0;
+}
+
+.room-card {
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: all 0.3s ease;
+  height: 100%;
+}
+
+.room-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.room-image {
+  height: 200px;
+  overflow: hidden;
+}
+
+.room-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.room-card:hover .room-image img {
+  transform: scale(1.1);
+}
+
+.room-details {
+  padding: 20px;
+}
+
+.room-type {
+  display: inline-block;
+  padding: 5px 10px;
+  background: linear-gradient(to right, var(--primary-color), var(--primary-light));
+  color: white;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.room-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--dark-color);
+  margin-bottom: 10px;
+}
+
+.room-price {
+  color: var(--primary-color);
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.room-features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.room-feature {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  color: var(--gray-color);
+}
+
+.room-feature i {
+  margin-right: 5px;
+  color: var(--primary-color);
+}
+
+.btn-view-details {
+  display: block;
+  background: linear-gradient(to right, var(--primary-color), var(--primary-light));
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  text-align: center;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-view-details:hover {
+  background: linear-gradient(to right, var(--primary-dark), var(--primary-color));
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  color: white;
+}
+
+/* Testimonials Section */
+.testimonials-section {
+  padding: 80px 0;
+  background-color: white;
+}
+
+.testimonial-card {
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.testimonial-card::before {
+  content: "";
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  font-size: 80px;
+  color: rgba(74, 111, 165, 0.1);
+  font-family: Georgia, serif;
+  line-height: 1;
+}
+
+.testimonial-text {
+  font-style: italic;
+  color: var(--gray-color);
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.testimonial-author {
+  display: flex;
+  align-items: center;
+}
+
+.author-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 15px;
+}
+
+.author-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.author-info h4 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--dark-color);
+}
+
+.author-info p {
+  margin: 5px 0 0;
+  font-size: 14px;
+  color: var(--gray-color);
+}
+
+/* CTA Section */
+.cta-section {
+  background: linear-gradient(135deg, var(--secondary-color), var(--secondary-light));
+  color: white;
+  padding: 80px 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-section::before {
+  content: "";
+  position: absolute;
+  top: -100px;
+  right: -100px;
+  width: 300px;
+  height: 300px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+}
+
+.cta-section::after {
+  content: "";
+  position: absolute;
+  bottom: -100px;
+  left: -100px;
+  width: 300px;
+  height: 300px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+}
+
+.cta-content {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.cta-title {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.cta-text {
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+
+.cta-btn {
+  display: inline-block;
+  background-color: white;
+  color: var(--secondary-color);
+  padding: 15px 30px;
+  border-radius: 50px;
+  font-size: 18px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.cta-btn:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+  color: var(--secondary-color);
+}
+
+/* Animation for scroll reveal */
+.reveal {
+  position: relative;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 1s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+  .hero-title {
+    font-size: 36px;
+  }
+
+  .hero-subtitle {
+    font-size: 18px;
+  }
+
+  .hero-btn {
+    padding: 12px 25px;
+    font-size: 16px;
+  }
+
+  .section-title {
+    font-size: 30px;
+  }
+
+  .feature-title {
+    font-size: 20px;
+  }
+
+  .cta-title {
+    font-size: 30px;
+  }
+
+  .cta-text {
+    font-size: 16px;
+  }
+
+  .cta-btn {
+    padding: 12px 25px;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 50px 0;
+  }
+
+  .hero-image {
+    margin-top: 30px;
+  }
+
+  .feature-card {
+    margin-bottom: 30px;
+  }
+
+  .room-card {
+    margin-bottom: 30px;
+  }
+
+  .testimonial-card {
+    margin-bottom: 30px;
+  }
+}
+
+/* Button to view all rooms */
+.btn-view-all {
+  display: inline-block;
+  background: linear-gradient(to right, var(--primary-color), var(--primary-light));
+  color: white;
+  padding: 12px 30px;
+  border-radius: 50px;
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.btn-view-all:hover {
+  background: linear-gradient(to right, var(--primary-dark), var(--primary-color));
+  transform: translateY(-3px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+  color: white;
+}
